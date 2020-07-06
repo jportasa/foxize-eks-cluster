@@ -6,13 +6,12 @@
 # Manually: Crear un 1x NAT GW en la AZ publica con su EIP para que nodos privados que estna en las diferentes AZ's puedan salir a Internet. Añadir ruta 0/0 a la route table.
 # Slack support https://slack.weave.works/
 
-
 apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
 
 metadata:
-  name: EKS-cluster-foxize # <---------Cambiar
-  region: eu-west-1 # <---- cambiar para prod
+  name: EKS-cluster-foxize
+  region: eu-west-1
   version: "1.16" # k8s version
 
 # Docu: https://eksctl.io/usage/iamserviceaccounts/
@@ -64,7 +63,7 @@ nodeGroups:
     maxSize: 4
     volumeSize: 20
     availabilityZones:
-      - eu-west-1a # <---- cambiar par prod
+      - eu-west-1a
       # - eu-west-1b
       # - eu-west-1c
     instancesDistribution:
@@ -74,7 +73,7 @@ nodeGroups:
       onDemandPercentageAboveBaseCapacity: 25
     privateNetworking: true
     ssh:
-      publicKeyName: joan-key # <---------Cambiar
+      publicKeyName: joan-key
     iam:
       attachPolicyARNs:
         - arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy # Mandatory
@@ -84,7 +83,7 @@ nodeGroups:
         autoScaler: true
         externalDNS: true
         cloudWatch: true
-        albIngress: true # Needed if you use ALB+ingress
+        albIngress: true   # Needed if you use ALB+ingress
         certManager: true
         imageBuilder: true # Allow r/w access to ECR
     labels:
@@ -99,7 +98,7 @@ nodeGroups:
     maxSize: 0
     volumeSize: 20
     availabilityZones:
-      - eu-west-1a # <---- cambiar par prod
+      - eu-west-1a
       # - eu-west-1b
       # - eu-west-1c
     instancesDistribution:
@@ -109,7 +108,7 @@ nodeGroups:
       onDemandPercentageAboveBaseCapacity: 25
     privateNetworking: true
     ssh:
-      publicKeyName: joan-key # <---------Cambiar
+      publicKeyName: joan-key
     iam:
       attachPolicyARNs:
         - arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy # Mandatory
@@ -119,7 +118,7 @@ nodeGroups:
         autoScaler: true
         externalDNS: true
         cloudWatch: true
-        albIngress: true # Needed if you use ALB+ingress
+        albIngress: true   # Needed if you use ALB+ingress
         certManager: true
         imageBuilder: true # Allow r/w access to ECR
     labels:
