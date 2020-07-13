@@ -13,9 +13,12 @@ aws sts get-caller-identity
 ```
 Edito el configmap aws-auth, sección mapUsers
 ```
-kubectl edit configmap/aws-auth -n kube-system
+kubectl get configmap/aws-auth -n kube-system -o yaml > aws-auth.yaml
 ```
-
+Lo editamos y lo aplicamos con 
+```
+kubectl apply -f aws-auth.yaml
+```
 ```
 apiVersion: v1 
 kind: ConfigMap 
