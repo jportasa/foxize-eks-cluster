@@ -33,5 +33,5 @@ data:
     - userarn: arn:aws:iam::11122223333:user/designated_user 
       username: designated_user 
       groups: 
-        - system:masters
+        - system:masters  # grupo max privilegios dentro de k8s, más info: https://kubernetes.io/docs/reference/access-authn-authz/rbac/
 ```
