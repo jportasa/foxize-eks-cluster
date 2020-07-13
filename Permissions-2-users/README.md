@@ -11,7 +11,7 @@ Cual es mi identidad?
 ```
 aws sts get-caller-identity
 ```
-Edito el configmap aws-auth
+Edito el configmap aws-auth, sección mapUsers
 ```
 kubectl edit configmap/aws-auth -n kube-system
 ```
