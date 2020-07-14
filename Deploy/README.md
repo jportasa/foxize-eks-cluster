@@ -24,8 +24,3 @@ Rollback de versión
 helm rollback my-todo-app <version number>
 ```
 
-
-## Estrategia versiones
-
-Crear Tags en la rama de Master. Las imagenes se crearan con el nombre del Tag y Jenkins deployará la última versión de imagen con helm.
-Los Tags tienen 3 numeros X.Y.Z    X=major, Y=minor, Z=Fix
