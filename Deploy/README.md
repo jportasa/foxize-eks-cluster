@@ -18,7 +18,6 @@ Ver diferencias
 ```
 helm diff upgrade
 ```
-
 Rollback de versión
 ```
 helm rollback my-todo-app <version number>
