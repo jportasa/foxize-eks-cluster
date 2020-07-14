@@ -1,5 +1,4 @@
-# Monitoring
-## Dashboard
+# Dashboard
 
 Docu: https://github.com/kubernetes/dashboard/
 
